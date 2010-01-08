@@ -1,0 +1,60 @@
+#############################################################
+
+@prefix :        <http://usefulinc.com/ns/doap#> .
+@prefix dcs:     <http://ontologi.es/doap-changeset#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix my:      <http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix toby:    <http://tobyinkster.co.uk/#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#############################################################
+
+<>
+
+	dc:title         "Changes" ;
+	dc:description   "Revision history for Perl extension Module::Install::DOAPChangeSets."@en ;
+	dc:subject       my:project ;
+	dc:creator       toby:i .
+
+#############################################################
+
+my:v_0.91
+
+	a               :Version ;
+	dc:issued       "2010-01-08"^^xsd:date ;
+	:revision       "0.91"^^xsd:string ;
+	:file-release   <http://backpan.perl.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.01.tar.gz> ;
+	rdfs:comment    "Original version"@en .
+
+#############################################################
+
+my:project
+
+	a               :Project ;
+	:name           "Module-Install-DOAPChangeSets" ;
+	:shortdesc      "Write your distribution change log in RDF"@en ;
+	:programming-language  "Perl" ;
+	:homepage       <http://search.cpan.org/dist/Module-Install-DOAPChangeSets/> ;
+	:download-page  <http://search.cpan.org/dist/Module-Install-DOAPChangeSets/> ;
+	:bug-database   <http://rt.cpan.org/Dist/Display.html?Queue=Module-Install-DOAPChangeSets> ;
+	:repository     [ a :SVNRepository ; :browse <http://goddamn.co.uk/viewvc/perlmods/Module-Install-DOAPChangeSets/> ] ;
+	:maintainer     toby:i ;
+	:developer      toby:i ;
+	:documenter     toby:i ;
+	:tester         toby:i ;
+	:created        "2010-01-08"^^xsd:date ;
+	:license        <http://dev.perl.org/licenses/> ;
+	:release        my:v_0.91 .
+
+#############################################################
+
+toby:i
+
+	a               foaf:Person ;
+	foaf:name       "Toby Inkster" ;
+	foaf:homepage   <http://tobyinkster.co.uk/> ;
+	foaf:page       <http://search.cpan.org/~tobyink/> .
+
+#############################################################
