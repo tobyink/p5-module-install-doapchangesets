@@ -15,11 +15,28 @@
     <dc:subject rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#project"/>
     <dc:title>Changes</dc:title>
   </rdf:Description>
-  <Version rdf:about="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0.91">
+  <Version rdf:about="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_00_01">
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-08</dc:issued>
-    <file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.01.tar.gz"/>
-    <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.91</revision>
-    <rdfs:comment xml:lang="en">Original version</rdfs:comment>
+    <file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.00_01.tar.gz"/>
+    <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.00_01</revision>
+    <rdfs:comment xml:lang="en">Developer preview.</rdfs:comment>
+    <rdfs:label>Omega 1</rdfs:label>
+  </Version>
+  <Version rdf:about="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_00_02">
+    <dcs:changeset>
+      <rdf:Description>
+        <dcs:item>
+          <rdf:Description>
+            <rdfs:label xml:lang="en">Don't recommend QNames containing '.' -- they're supported by libraptor, but illegal in Turtle.</rdfs:label>
+          </rdf:Description>
+        </dcs:item>
+      </rdf:Description>
+    </dcs:changeset>
+    <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-08</dc:issued>
+    <file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.00_02.tar.gz"/>
+    <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.00_02</revision>
+    <rdfs:comment xml:lang="en">Developer preview.</rdfs:comment>
+    <rdfs:label>Omega 2</rdfs:label>
   </Version>
   <Project rdf:about="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#project">
     <bug-database rdf:resource="http://rt.cpan.org/Dist/Display.html?Queue=Module-Install-DOAPChangeSets"/>
@@ -32,7 +49,8 @@
     <maintainer rdf:resource="http://tobyinkster.co.uk/#i"/>
     <name>Module-Install-DOAPChangeSets</name>
     <programming-language>Perl</programming-language>
-    <release rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0.91"/>
+    <release rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_00_01"/>
+    <release rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_00_02"/>
     <repository>
       <SVNRepository>
         <browse rdf:resource="http://goddamn.co.uk/viewvc/perlmods/Module-Install-DOAPChangeSets/"/>
@@ -43,6 +61,7 @@
   </Project>
   <foaf:Person rdf:about="http://tobyinkster.co.uk/#i">
     <foaf:homepage rdf:resource="http://tobyinkster.co.uk/"/>
+    <foaf:mbox rdf:resource="mailto:tobyink@cpan.org"/>
     <foaf:name>Toby Inkster</foaf:name>
     <foaf:page rdf:resource="http://search.cpan.org/~tobyink/"/>
   </foaf:Person>

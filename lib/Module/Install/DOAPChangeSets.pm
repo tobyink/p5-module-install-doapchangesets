@@ -6,7 +6,7 @@ use Module::Install::Base ();
 
 use vars qw{$VERSION @ISA};
 BEGIN {
-        $VERSION = '0.91';
+        $VERSION = '0.00_02';
         @ISA     = 'Module::Install::Base';
 }
 
@@ -62,7 +62,7 @@ Please report any bugs to L<http://rt.cpan.org/>.
 
 =head1 SEE ALSO
 
-L<Module::Install>.
+L<Module::Install>, L<Module::Install::DOAPChangeSets::Format> .
 
 L<http://www.perlrdf.org/>.
 

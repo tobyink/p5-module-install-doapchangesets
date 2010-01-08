@@ -9,7 +9,7 @@ use Module::Install::Base;
 
 use vars qw{$VERSION @ISA};
 BEGIN {
-	$VERSION = '0.91';
+	$VERSION = '0.00_02';
 	@ISA     = qw{Module::Install::Base};
 }
 
@@ -71,7 +71,7 @@ sub write_doap_changes
 			if UNIVERSAL::isa($row->{'bugdatabase'}, 'RDF::Trine::Node::Resource');
 		$projects->{$p}->{'maint'}->{ $row->{'maint'}->as_ntriples }->{'name'} = $row->{'maintname'}->literal_value
 			if UNIVERSAL::isa($row->{'maintname'}, 'RDF::Trine::Node::Literal');
-		$projects->{$p}->{'maint'}->{ $row->{'maint'}->as_ntriples }->{'mbox'}->{ $row->{'maintmbox'}->literal_value }++
+		$projects->{$p}->{'maint'}->{ $row->{'maint'}->as_ntriples }->{'mbox'}->{ $row->{'maintmbox'}->uri }++
 			if UNIVERSAL::isa($row->{'maintmbox'}, 'RDF::Trine::Node::Resource');
 		$doctitle = $row->{'title'}->literal_value
 			if UNIVERSAL::isa($row->{'title'}, 'RDF::Trine::Node::Literal');
