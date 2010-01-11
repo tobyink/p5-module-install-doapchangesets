@@ -91,6 +91,12 @@ A CPAN e-mail address is also a good idea.
     foaf:mbox   <mailto:joebloggs@cpan.example.org> ;
     foaf:page   <http://search.cpan.example.org/~joebloggs/> .
 
+=head1 Legacy Support
+
+The module has legacy support for Aaron Cope's "changefile" vocab, but this is not
+thoroughly tested. Changelogs written in this vocab tend to use DOAP incorrectly,
+so I discourage using this vocab.
+
 =head1 SEE ALSO
 
 L<Module::Install>, L<Module::Install::DOAPChangeSets> .

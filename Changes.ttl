@@ -38,7 +38,25 @@ my:v_0_00_02
 	rdfs:label	"Omega 2" ;
 	rdfs:comment    "Developer preview."@en ;
 	dcs:changeset [
-		dcs:item [ rdfs:label "Don't recommend QNames containing '.' -- they're supported by libraptor, but illegal in Turtle."@en ]
+		dcs:versus my:v_0_00_01 ;
+		dcs:item
+			[ rdfs:label "Don't recommend QNames containing '.' -- they're supported by libraptor, but illegal in Turtle."@en ]
+	] .
+
+my:v_0_00_03
+
+	a               :Version ;
+	dc:issued	"2010-01-11"^^xsd:date ;
+	:revision	"0.00_03"^^xsd:string ;
+	:file-release   <http://backpan.perl.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.00_03.tar.gz> ;
+	rdfs:label	"Omega 3" ;
+	rdfs:comment    "Developer preview."@en ;
+	dcs:changeset [
+		dcs:versus my:v_0_00_02 ;
+		dcs:item
+			[ rdfs:label "Support Aaron Cope's changefile vocab as a legacy input format."@en ; a dcs:Addition ] ,
+			[ rdfs:label "Reverse order of versions in Changelog (newest at top)"@en ] ,
+			[ rdfs:label "Use Text::Wrap to wrap text."@en ; a dcs:Addition ]
 	] .
 
 
@@ -60,7 +78,7 @@ my:project
 	:tester         toby:i ;
 	:created        "2010-01-08"^^xsd:date ;
 	:license        <http://dev.perl.org/licenses/> ;
-	:release        my:v_0_00_01 , my:v_0_00_02 .
+	:release        my:v_0_00_01 , my:v_0_00_02 , my:v_0_00_03 .
 
 #############################################################
 
