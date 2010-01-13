@@ -2,8 +2,8 @@
 ## Changes #################################################################
 ############################################################################
 
-Module-Install-DOAPChangeSets
-=============================
+<http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#project>
+====================================================================
 
 Created:      2010-01-08
 Home page:    <http://search.cpan.org/dist/Module-Install-DOAPChangeSets/>
@@ -11,9 +11,9 @@ Bug tracker:  <http://rt.cpan.org/Dist/Display.html?Queue=Module-Install-DOAPCha
 Maintainer:   Toby Inkster <mailto:tobyink@cpan.org>
 
 0.00_03 [2010-01-11] # Omega 3
- - (Addition) Use Text::Wrap to wrap text.
  - (Addition) Support Aaron Cope's changefile vocab as a legacy input
    format.
+ - (Addition) Use Text::Wrap to wrap text.
  - Reverse order of versions in Changelog (newest at top)
 
 0.00_02 [2010-01-08] # Omega 2

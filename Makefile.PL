@@ -19,7 +19,9 @@ test_requires       'Test::More' => '0.61';
 requires            'RDF::Trine'         => '0.112';
 requires            'RDF::Query'         => '2.200';
 requires            'File::Slurp'        => 0;
+requires            'Text::Wrap'         => 0;
 requires            'URI::file'          => 0;
+requires            'LWP::Simple'        => 0;
 
 resources(
 	'homepage'   => "http://search.cpan.org/dist/$dist/",

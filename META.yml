@@ -20,8 +20,10 @@ no_index:
     - t
 requires:
   File::Slurp: 0
+  LWP::Simple: 0
   RDF::Query: 2.200
   RDF::Trine: 0.112
+  Text::Wrap: 0
   URI::file: 0
   perl: 5.8.0
 resources:
@@ -29,4 +31,4 @@ resources:
   homepage: http://search.cpan.org/dist/Module-Install-DOAPChangeSets/
   license: http://dev.perl.org/licenses/
   repository: http://goddamn.co.uk/viewvc/perlmods/Module-Install-DOAPChangeSets/
-version: 0.00_03
+version: 0.00_04
