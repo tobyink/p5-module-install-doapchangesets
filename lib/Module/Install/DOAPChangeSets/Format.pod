@@ -1,3 +1,7 @@
+=head1 NAME
+
+Module::Install::DOAPChangeSets::Format - vocabulary guide
+
 =head1 DOAP CHANGESETS FORMAT
 
 DOAP Changesets are written in RDF - normally serialised as Turtle, though
@@ -91,7 +95,7 @@ A CPAN e-mail address is also a good idea.
     foaf:mbox   <mailto:joebloggs@cpan.example.org> ;
     foaf:page   <http://search.cpan.example.org/~joebloggs/> .
 
-=head1 Legacy Support
+=head2 Legacy Support
 
 The module has legacy support for Aaron Cope's "changefile" vocab, but this is not
 thoroughly tested. Changelogs written in this vocab tend to use DOAP incorrectly,

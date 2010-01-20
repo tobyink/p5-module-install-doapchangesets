@@ -2,11 +2,11 @@
 
 =head1 NAME
 
-RDF::DOAP::ChangesSets - Create pretty ChangeLogs from RDF
+RDF::DOAP::ChangeSets - Create pretty ChangeLogs from RDF
 
 =head1 SYNOPSIS
 
- use RDF::DOAP::ChangesSets;
+ use RDF::DOAP::ChangeSets;
  use URI::file;
  
  my $file     = 'path/to/changelog.rdf';
@@ -29,15 +29,13 @@ use Text::Wrap;
 
 =head1 VERSION
 
-0.00_04
-
-Note: this is a developer preview release!
+0.01
 
 =cut
 
 use vars qw{$VERSION};
 BEGIN {
-	$VERSION = '0.00_04';
+	$VERSION = '0.01';
 }
 
 =head1 DESCRIPTION
@@ -108,15 +106,15 @@ sub new
 	if (lc $type eq 'auto')
 	{
 		my $r = RDF::Query->new(
-			"ASK WHERE { ?version <http://ontologi.es/doap-changeset#changeset> ?set .}")
+			"ASK WHERE { ?a <http://usefulinc.com/ns/doap#Version> ?b .}")
 			->execute($model);
 		if ($r->get_boolean)
 		{
-			$type = 'current';
+			$type = 'legacy';
 		}
 		else
 		{
-			$type = 'legacy';
+			$type = 'current';
 		}
 	}	
 	
@@ -444,7 +442,7 @@ sub _project_data__legacy
 sub _release_data
 {
 	my $self = shift;
-	
+
 	if ($self->is_legacy)
 	{
 		return $self->_release_data__legacy(@_);

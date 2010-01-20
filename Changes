@@ -10,6 +10,12 @@ Home page:    <http://search.cpan.org/dist/Module-Install-DOAPChangeSets/>
 Bug tracker:  <http://rt.cpan.org/Dist/Display.html?Queue=Module-Install-DOAPChangeSets>
 Maintainer:   Toby Inkster <mailto:tobyink@cpan.org>
 
+0.01 [2010-01-18]
+ - Documentation improvements.
+
+0.00_04 [2010-01-13] # Omega 4
+ - Split out RDF::DOAP::ChangeSets as a separate Perl module.
+
 0.00_03 [2010-01-11] # Omega 3
  - (Addition) Support Aaron Cope's changefile vocab as a legacy input
    format.

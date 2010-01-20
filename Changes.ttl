@@ -73,6 +73,18 @@ my:v_0_00_04
 			[ rdfs:label "Split out RDF::DOAP::ChangeSets as a separate Perl module."@en ]
 	] .
 
+my:v_0_01
+
+	a               :Version ;
+	dc:issued       "2010-01-18"^^xsd:date ;
+	:revision       "0.01"^^xsd:string ;
+	:file-release   <http://backpan.perl.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.01.tar.gz> ;
+	rdfs:comment    "First vaguely stable release."@en ;
+	dcs:changeset [
+		dcs:versus my:v_0_00_04 ;
+		dcs:item
+			[ rdfs:label "Documentation improvements."@en ]
+	] .
 
 #############################################################
 
@@ -92,8 +104,8 @@ my:project
 	:tester         toby:i ;
 	:created        "2010-01-08"^^xsd:date ;
 	:license        <http://dev.perl.org/licenses/> ;
-	:release        my:v_0_00_01 , my:v_0_00_02 , my:v_0_00_03 ,
-	                my:v_0_00_04 .
+	:release        my:v_0_00_01 , my:v_0_00_02 , my:v_0_00_03 , my:v_0_00_04 , 
+	                my:v_0_01 .
 
 #############################################################
 
