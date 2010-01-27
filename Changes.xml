@@ -99,6 +99,21 @@
     <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.01</revision>
     <rdfs:comment xml:lang="en">First vaguely stable release.</rdfs:comment>
   </Version>
+  <Version rdf:about="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_02">
+    <dcs:changeset>
+      <rdf:Description>
+        <dcs:item>
+          <dcs:Bugfix>
+            <rdfs:label xml:lang="en">Project name was being overridden by URI.</rdfs:label>
+          </dcs:Bugfix>
+        </dcs:item>
+        <dcs:versus rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_01"/>
+      </rdf:Description>
+    </dcs:changeset>
+    <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-27</dc:issued>
+    <file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.02.tar.gz"/>
+    <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.02</revision>
+  </Version>
   <Project rdf:about="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#project">
     <bug-database rdf:resource="http://rt.cpan.org/Dist/Display.html?Queue=Module-Install-DOAPChangeSets"/>
     <created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-08</created>
@@ -115,6 +130,7 @@
     <release rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_00_03"/>
     <release rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_00_04"/>
     <release rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_01"/>
+    <release rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_02"/>
     <repository>
       <SVNRepository>
         <browse rdf:resource="http://goddamn.co.uk/viewvc/perlmods/Module-Install-DOAPChangeSets/"/>

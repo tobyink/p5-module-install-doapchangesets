@@ -86,6 +86,19 @@ my:v_0_01
 			[ rdfs:label "Documentation improvements."@en ]
 	] .
 
+my:v_0_02
+
+	a               :Version ;
+	dc:issued       "2010-01-27"^^xsd:date ;
+	:revision       "0.02"^^xsd:string ;
+	:file-release   <http://backpan.perl.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.02.tar.gz> ;
+	dcs:changeset [
+		dcs:versus my:v_0_01 ;
+		dcs:item
+			[ rdfs:label "Project name was being overridden by URI."@en ; a dcs:Bugfix ]
+	] .
+
+
 #############################################################
 
 my:project
@@ -105,7 +118,7 @@ my:project
 	:created        "2010-01-08"^^xsd:date ;
 	:license        <http://dev.perl.org/licenses/> ;
 	:release        my:v_0_00_01 , my:v_0_00_02 , my:v_0_00_03 , my:v_0_00_04 , 
-	                my:v_0_01 .
+	                my:v_0_01 , my:v_0_02 .
 
 #############################################################
 

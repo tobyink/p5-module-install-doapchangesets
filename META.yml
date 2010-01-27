@@ -31,4 +31,4 @@ resources:
   homepage: http://search.cpan.org/dist/Module-Install-DOAPChangeSets/
   license: http://dev.perl.org/licenses/
   repository: http://goddamn.co.uk/viewvc/perlmods/Module-Install-DOAPChangeSets/
-version: 0.01
+version: 0.02

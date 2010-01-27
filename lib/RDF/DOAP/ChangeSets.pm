@@ -29,13 +29,13 @@ use Text::Wrap;
 
 =head1 VERSION
 
-0.01
+0.02
 
 =cut
 
 use vars qw{$VERSION};
 BEGIN {
-	$VERSION = '0.01';
+	$VERSION = '0.02';
 }
 
 =head1 DESCRIPTION
@@ -367,7 +367,8 @@ sub _project_data__current
 	
 	foreach my $k (keys %$projects)
 	{
-		$projects->{$k}->{'distname'} = $k;
+		$projects->{$k}->{'distname'} = $k
+			unless defined $projects->{$k}->{'distname'};
 	}
 	
 	$self->{'projects'}  = $projects;
@@ -432,7 +433,8 @@ sub _project_data__legacy
 
 	foreach my $k (keys %$projects)
 	{
-		$projects->{$k}->{'distname'} = $k;
+		$projects->{$k}->{'distname'} = $k
+			unless defined $projects->{$k}->{'distname'};
 	}
 
 	$self->{'projects'}  = $projects;
