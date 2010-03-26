@@ -2,7 +2,7 @@
 
 =head1 NAME
 
-RDF::DOAP::ChangeSets - Create pretty ChangeLogs from RDF
+RDF::DOAP::ChangeSets - create pretty ChangeLogs from RDF
 
 =head1 SYNOPSIS
 
@@ -23,19 +23,20 @@ package RDF::DOAP::ChangeSets;
 use strict;
 use File::Slurp qw(slurp);
 use LWP::Simple;
+use Perl::Version;
 use RDF::Trine;
 use RDF::Query;
 use Text::Wrap;
 
 =head1 VERSION
 
-0.02
+0.03
 
 =cut
 
 use vars qw{$VERSION};
 BEGIN {
-	$VERSION = '0.02';
+	$VERSION = '0.03';
 }
 
 =head1 DESCRIPTION
@@ -224,8 +225,12 @@ sub to_string
 		# Read in data about this project's releases.
 		$self->_release_data($project);
 		
+		my @revisions = sort {
+			Perl::Version->new($b->{'revision'}) cmp Perl::Version->new($a->{'revision'})
+		} values %{$projects->{$project}->{'v'}};
+		
 		# foreach version
-		foreach my $version (sort { $b->{'revision'} cmp $a->{'revision'} } values %{$projects->{$project}->{'v'}})
+		foreach my $version (@revisions)
 		{
 			# Version number, release data and version name.
 			$rv.= $version->{'revision'};

@@ -6,7 +6,7 @@ use Module::Install::Base ();
 
 use vars qw{$VERSION @ISA};
 BEGIN {
-        $VERSION = '0.02';
+        $VERSION = '0.03';
         @ISA     = 'Module::Install::Base';
 }
 
@@ -25,7 +25,7 @@ sub write_doap_changes_xml {
 __END__
 =head1 NAME
 
-Module::Install::DOAPChangeSets - Write your distribution change log in RDF
+Module::Install::DOAPChangeSets - write your distribution change log in RDF
 
 =head1 DESCRIPTION
 

@@ -16,6 +16,7 @@ license             'perl';
 
 test_requires       'Test::More' => '0.61';
 
+requires            'Perl::Version'      => 0;
 requires            'RDF::Trine'         => '0.112';
 requires            'RDF::Query'         => '2.200';
 requires            'File::Slurp'        => 0;

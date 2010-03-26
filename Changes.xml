@@ -17,7 +17,7 @@
   </rdf:Description>
   <Version rdf:about="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_00_01">
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-08</dc:issued>
-    <file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.00_01.tar.gz"/>
+    <file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.00_01.tar.gz"/>
     <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.00_01</revision>
     <rdfs:comment xml:lang="en">Developer preview.</rdfs:comment>
     <rdfs:label>Omega 1</rdfs:label>
@@ -34,7 +34,7 @@
       </rdf:Description>
     </dcs:changeset>
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-08</dc:issued>
-    <file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.00_02.tar.gz"/>
+    <file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.00_02.tar.gz"/>
     <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.00_02</revision>
     <rdfs:comment xml:lang="en">Developer preview.</rdfs:comment>
     <rdfs:label>Omega 2</rdfs:label>
@@ -61,7 +61,7 @@
       </rdf:Description>
     </dcs:changeset>
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-11</dc:issued>
-    <file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.00_03.tar.gz"/>
+    <file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.00_03.tar.gz"/>
     <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.00_03</revision>
     <rdfs:comment xml:lang="en">Developer preview.</rdfs:comment>
     <rdfs:label>Omega 3</rdfs:label>
@@ -78,7 +78,7 @@
       </rdf:Description>
     </dcs:changeset>
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-13</dc:issued>
-    <file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.00_04.tar.gz"/>
+    <file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.00_04.tar.gz"/>
     <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.00_04</revision>
     <rdfs:comment xml:lang="en">Developer preview.</rdfs:comment>
     <rdfs:label>Omega 4</rdfs:label>
@@ -95,7 +95,7 @@
       </rdf:Description>
     </dcs:changeset>
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-18</dc:issued>
-    <file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.01.tar.gz"/>
+    <file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.01.tar.gz"/>
     <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.01</revision>
     <rdfs:comment xml:lang="en">First vaguely stable release.</rdfs:comment>
   </Version>
@@ -111,8 +111,23 @@
       </rdf:Description>
     </dcs:changeset>
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-27</dc:issued>
-    <file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.02.tar.gz"/>
+    <file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.02.tar.gz"/>
     <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.02</revision>
+  </Version>
+  <Version rdf:about="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_03">
+    <dcs:changeset>
+      <rdf:Description>
+        <dcs:item>
+          <rdf:Description>
+            <rdfs:label xml:lang="en">Use Perl::Version to sort revisions in output.</rdfs:label>
+          </rdf:Description>
+        </dcs:item>
+        <dcs:versus rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_02"/>
+      </rdf:Description>
+    </dcs:changeset>
+    <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-03-26</dc:issued>
+    <file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.03.tar.gz"/>
+    <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.03</revision>
   </Version>
   <Project rdf:about="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#project">
     <bug-database rdf:resource="http://rt.cpan.org/Dist/Display.html?Queue=Module-Install-DOAPChangeSets"/>
@@ -131,12 +146,13 @@
     <release rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_00_04"/>
     <release rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_01"/>
     <release rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_02"/>
+    <release rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_03"/>
     <repository>
       <SVNRepository>
         <browse rdf:resource="http://goddamn.co.uk/viewvc/perlmods/Module-Install-DOAPChangeSets/"/>
       </SVNRepository>
     </repository>
-    <shortdesc xml:lang="en">Write your distribution change log in RDF</shortdesc>
+    <shortdesc xml:lang="en">write your distribution change log in RDF</shortdesc>
     <tester rdf:resource="http://tobyinkster.co.uk/#i"/>
   </Project>
   <foaf:Person rdf:about="http://tobyinkster.co.uk/#i">
