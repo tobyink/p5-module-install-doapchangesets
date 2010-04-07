@@ -28,15 +28,9 @@ use RDF::Trine;
 use RDF::Query;
 use Text::Wrap;
 
-=head1 VERSION
-
-0.03
-
-=cut
-
 use vars qw{$VERSION};
 BEGIN {
-	$VERSION = '0.03';
+	$VERSION = '0.04';
 }
 
 =head1 DESCRIPTION

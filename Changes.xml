@@ -3,7 +3,7 @@
    xmlns:dc="http://purl.org/dc/terms/"
    xmlns:dcs="http://ontologi.es/doap-changeset#"
    xmlns:foaf="http://xmlns.com/foaf/0.1/"
-   xmlns:my="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#"
+   xmlns:my="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:toby="http://tobyinkster.co.uk/#"
@@ -12,17 +12,17 @@
   <rdf:Description rdf:about="file:///home/tai/src/perlmods/Module-Install-DOAPChangeSets/Changes.ttl">
     <dc:creator rdf:resource="http://tobyinkster.co.uk/#i"/>
     <dc:description xml:lang="en">Revision history for Perl extension Module::Install::DOAPChangeSets.</dc:description>
-    <dc:subject rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#project"/>
+    <dc:subject rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/project"/>
     <dc:title>Changes</dc:title>
   </rdf:Description>
-  <Version rdf:about="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_00_01">
+  <Version rdf:about="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_01">
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-08</dc:issued>
     <file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.00_01.tar.gz"/>
     <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.00_01</revision>
     <rdfs:comment xml:lang="en">Developer preview.</rdfs:comment>
     <rdfs:label>Omega 1</rdfs:label>
   </Version>
-  <Version rdf:about="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_00_02">
+  <Version rdf:about="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_02">
     <dcs:changeset>
       <rdf:Description>
         <dcs:item>
@@ -30,7 +30,7 @@
             <rdfs:label xml:lang="en">Don't recommend QNames containing '.' -- they're supported by libraptor, but illegal in Turtle.</rdfs:label>
           </rdf:Description>
         </dcs:item>
-        <dcs:versus rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_00_01"/>
+        <dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_01"/>
       </rdf:Description>
     </dcs:changeset>
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-08</dc:issued>
@@ -39,7 +39,7 @@
     <rdfs:comment xml:lang="en">Developer preview.</rdfs:comment>
     <rdfs:label>Omega 2</rdfs:label>
   </Version>
-  <Version rdf:about="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_00_03">
+  <Version rdf:about="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_03">
     <dcs:changeset>
       <rdf:Description>
         <dcs:item>
@@ -57,7 +57,7 @@
             <rdfs:label xml:lang="en">Use Text::Wrap to wrap text.</rdfs:label>
           </dcs:Addition>
         </dcs:item>
-        <dcs:versus rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_00_02"/>
+        <dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_02"/>
       </rdf:Description>
     </dcs:changeset>
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-11</dc:issued>
@@ -66,7 +66,7 @@
     <rdfs:comment xml:lang="en">Developer preview.</rdfs:comment>
     <rdfs:label>Omega 3</rdfs:label>
   </Version>
-  <Version rdf:about="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_00_04">
+  <Version rdf:about="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_04">
     <dcs:changeset>
       <rdf:Description>
         <dcs:item>
@@ -74,7 +74,7 @@
             <rdfs:label xml:lang="en">Split out RDF::DOAP::ChangeSets as a separate Perl module.</rdfs:label>
           </rdf:Description>
         </dcs:item>
-        <dcs:versus rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_00_03"/>
+        <dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_03"/>
       </rdf:Description>
     </dcs:changeset>
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-13</dc:issued>
@@ -83,7 +83,7 @@
     <rdfs:comment xml:lang="en">Developer preview.</rdfs:comment>
     <rdfs:label>Omega 4</rdfs:label>
   </Version>
-  <Version rdf:about="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_01">
+  <Version rdf:about="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-01">
     <dcs:changeset>
       <rdf:Description>
         <dcs:item>
@@ -91,7 +91,7 @@
             <rdfs:label xml:lang="en">Documentation improvements.</rdfs:label>
           </rdf:Description>
         </dcs:item>
-        <dcs:versus rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_00_04"/>
+        <dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_04"/>
       </rdf:Description>
     </dcs:changeset>
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-18</dc:issued>
@@ -99,7 +99,7 @@
     <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.01</revision>
     <rdfs:comment xml:lang="en">First vaguely stable release.</rdfs:comment>
   </Version>
-  <Version rdf:about="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_02">
+  <Version rdf:about="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-02">
     <dcs:changeset>
       <rdf:Description>
         <dcs:item>
@@ -107,14 +107,14 @@
             <rdfs:label xml:lang="en">Project name was being overridden by URI.</rdfs:label>
           </dcs:Bugfix>
         </dcs:item>
-        <dcs:versus rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_01"/>
+        <dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v-0_01"/>
       </rdf:Description>
     </dcs:changeset>
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-27</dc:issued>
     <file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.02.tar.gz"/>
     <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.02</revision>
   </Version>
-  <Version rdf:about="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_03">
+  <Version rdf:about="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-03">
     <dcs:changeset>
       <rdf:Description>
         <dcs:item>
@@ -122,14 +122,29 @@
             <rdfs:label xml:lang="en">Use Perl::Version to sort revisions in output.</rdfs:label>
           </rdf:Description>
         </dcs:item>
-        <dcs:versus rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_02"/>
+        <dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-02"/>
       </rdf:Description>
     </dcs:changeset>
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-03-26</dc:issued>
     <file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.03.tar.gz"/>
     <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.03</revision>
   </Version>
-  <Project rdf:about="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#project">
+  <Version rdf:about="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-04">
+    <dcs:changeset>
+      <rdf:Description>
+        <dcs:item>
+          <dcs:Update>
+            <rdfs:label xml:lang="en">Best practice is to use http://purl.org/NET/cpan-uri/.</rdfs:label>
+          </dcs:Update>
+        </dcs:item>
+        <dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-03"/>
+      </rdf:Description>
+    </dcs:changeset>
+    <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-04-07</dc:issued>
+    <file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.04.tar.gz"/>
+    <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.04</revision>
+  </Version>
+  <Project rdf:about="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/project">
     <bug-database rdf:resource="http://rt.cpan.org/Dist/Display.html?Queue=Module-Install-DOAPChangeSets"/>
     <created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-08</created>
     <developer rdf:resource="http://tobyinkster.co.uk/#i"/>
@@ -140,13 +155,14 @@
     <maintainer rdf:resource="http://tobyinkster.co.uk/#i"/>
     <name>Module-Install-DOAPChangeSets</name>
     <programming-language>Perl</programming-language>
-    <release rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_00_01"/>
-    <release rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_00_02"/>
-    <release rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_00_03"/>
-    <release rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_00_04"/>
-    <release rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_01"/>
-    <release rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_02"/>
-    <release rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#v_0_03"/>
+    <release rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_01"/>
+    <release rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_02"/>
+    <release rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_03"/>
+    <release rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_04"/>
+    <release rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-01"/>
+    <release rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-02"/>
+    <release rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-03"/>
+    <release rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-04"/>
     <repository>
       <SVNRepository>
         <browse rdf:resource="http://goddamn.co.uk/viewvc/perlmods/Module-Install-DOAPChangeSets/"/>
@@ -156,6 +172,7 @@
     <tester rdf:resource="http://tobyinkster.co.uk/#i"/>
   </Project>
   <foaf:Person rdf:about="http://tobyinkster.co.uk/#i">
+    <ns1:sameAs xmlns:ns1="http://www.w3.org/2002/07/owl#" rdf:resource="http://purl.org/NET/cpan-uri/person/tobyink"/>
     <foaf:homepage rdf:resource="http://tobyinkster.co.uk/"/>
     <foaf:mbox rdf:resource="mailto:tobyink@cpan.org"/>
     <foaf:name>Toby Inkster</foaf:name>

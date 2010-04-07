@@ -4,7 +4,7 @@
 @prefix dcs:     <http://ontologi.es/doap-changeset#> .
 @prefix dc:      <http://purl.org/dc/terms/> .
 @prefix foaf:    <http://xmlns.com/foaf/0.1/> .
-@prefix my:      <http://search.cpan.org/dist/Module-Install-DOAPChangeSets/#> .
+@prefix my:      <http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix toby:    <http://tobyinkster.co.uk/#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
@@ -20,7 +20,7 @@
 
 #############################################################
 
-my:v_0_00_01
+my:v_0-00_01
 
 	a               :Version ;
 	dc:issued       "2010-01-08"^^xsd:date ;
@@ -29,7 +29,7 @@ my:v_0_00_01
 	rdfs:label      "Omega 1" ;
 	rdfs:comment    "Developer preview."@en .
 
-my:v_0_00_02
+my:v_0-00_02
 
 	a               :Version ;
 	dc:issued	"2010-01-08"^^xsd:date ;
@@ -38,12 +38,12 @@ my:v_0_00_02
 	rdfs:label	"Omega 2" ;
 	rdfs:comment    "Developer preview."@en ;
 	dcs:changeset [
-		dcs:versus my:v_0_00_01 ;
+		dcs:versus my:v_0-00_01 ;
 		dcs:item
 			[ rdfs:label "Don't recommend QNames containing '.' -- they're supported by libraptor, but illegal in Turtle."@en ]
 	] .
 
-my:v_0_00_03
+my:v_0-00_03
 
 	a               :Version ;
 	dc:issued	"2010-01-11"^^xsd:date ;
@@ -52,14 +52,14 @@ my:v_0_00_03
 	rdfs:label	"Omega 3" ;
 	rdfs:comment    "Developer preview."@en ;
 	dcs:changeset [
-		dcs:versus my:v_0_00_02 ;
+		dcs:versus my:v_0-00_02 ;
 		dcs:item
 			[ rdfs:label "Support Aaron Cope's changefile vocab as a legacy input format."@en ; a dcs:Addition ] ,
 			[ rdfs:label "Reverse order of versions in Changelog (newest at top)"@en ] ,
 			[ rdfs:label "Use Text::Wrap to wrap text."@en ; a dcs:Addition ]
 	] .
 
-my:v_0_00_04
+my:v_0-00_04
 
 	a               :Version ;
 	dc:issued       "2010-01-13"^^xsd:date ;
@@ -68,12 +68,12 @@ my:v_0_00_04
 	rdfs:label      "Omega 4" ;
 	rdfs:comment    "Developer preview."@en ;
 	dcs:changeset [
-		dcs:versus my:v_0_00_03 ;
+		dcs:versus my:v_0-00_03 ;
 		dcs:item
 			[ rdfs:label "Split out RDF::DOAP::ChangeSets as a separate Perl module."@en ]
 	] .
 
-my:v_0_01
+my:v_0-01
 
 	a               :Version ;
 	dc:issued       "2010-01-18"^^xsd:date ;
@@ -81,33 +81,45 @@ my:v_0_01
 	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.01.tar.gz> ;
 	rdfs:comment    "First vaguely stable release."@en ;
 	dcs:changeset [
-		dcs:versus my:v_0_00_04 ;
+		dcs:versus my:v_0-00_04 ;
 		dcs:item
 			[ rdfs:label "Documentation improvements."@en ]
 	] .
 
-my:v_0_02
+my:v_0-02
 
 	a               :Version ;
 	dc:issued       "2010-01-27"^^xsd:date ;
 	:revision       "0.02"^^xsd:string ;
 	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.02.tar.gz> ;
 	dcs:changeset [
-		dcs:versus my:v_0_01 ;
+		dcs:versus my:v-0_01 ;
 		dcs:item
 			[ rdfs:label "Project name was being overridden by URI."@en ; a dcs:Bugfix ]
 	] .
 
-my:v_0_03
+my:v_0-03
 
 	a               :Version ;
 	dc:issued       "2010-03-26"^^xsd:date ;
 	:revision       "0.03"^^xsd:string ;
 	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.03.tar.gz> ;
 	dcs:changeset [
-		dcs:versus my:v_0_02 ;
+		dcs:versus my:v_0-02 ;
 		dcs:item
 			[ rdfs:label "Use Perl::Version to sort revisions in output."@en ]
+	] .
+
+my:v_0-04
+
+	a               :Version ;
+	dc:issued       "2010-04-07"^^xsd:date ;
+	:revision       "0.04"^^xsd:string ;
+	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.04.tar.gz> ;
+	dcs:changeset [
+		dcs:versus my:v_0-03 ;
+		dcs:item
+			[ rdfs:label "Best practice is to use http://purl.org/NET/cpan-uri/."@en ; a dcs:Update ]
 	] .
 
 
@@ -129,8 +141,8 @@ my:project
 	:tester         toby:i ;
 	:created        "2010-01-08"^^xsd:date ;
 	:license        <http://dev.perl.org/licenses/> ;
-	:release        my:v_0_00_01 , my:v_0_00_02 , my:v_0_00_03 , my:v_0_00_04 , 
-	                my:v_0_01 , my:v_0_02 , my:v_0_03 .
+	:release        my:v_0-00_01 , my:v_0-00_02 , my:v_0-00_03 , my:v_0-00_04 , 
+	                my:v_0-01 , my:v_0-02 , my:v_0-03 , my:v_0-04 .
 
 #############################################################
 
@@ -140,6 +152,7 @@ toby:i
 	foaf:name       "Toby Inkster" ;
 	foaf:homepage   <http://tobyinkster.co.uk/> ;
 	foaf:page       <http://search.cpan.org/~tobyink/> ;
-	foaf:mbox       <mailto:tobyink@cpan.org> .
+	foaf:mbox       <mailto:tobyink@cpan.org> ;
+	<http://www.w3.org/2002/07/owl#sameAs> <http://purl.org/NET/cpan-uri/person/tobyink> .
 
 #############################################################

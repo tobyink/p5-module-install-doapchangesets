@@ -10,6 +10,10 @@ module supports any input format recognised by L<RDF::Trine>.)
 
 This document assumes a good working knowledge of RDF and Turtle.
 
+You would normally describe your project in a file called "Changes.ttl"
+from which a changelog called "Changes" will be automatically built 
+at packaging time.
+
 =head2 Namespaces
 
 You will want to define at least the following namespaces:
@@ -23,7 +27,7 @@ You will want to define at least the following namespaces:
 
 And you should define a namespace specific for your distribution:
 
-  @prefix my:   <http://search.cpan.example.org/dist/Example-Example/#> .
+  @prefix my:   <http://purl.org/NET/cpan-uri/dist/Example-Example/> .
 
 =head2 Describing the Changeset Document
 
@@ -40,7 +44,7 @@ a minimum, you must set the dc:subject.
 Use DOAP to describe the first version of the distribution. At the very
 least you need to include its revision (version number):
 
-  my:v_0_01
+  my:v_0-01
     a           :Version ;
     dc:issued   "2007-12-20"^^xsd:date ;
     :revision   "0.01"^^xsd:string .
@@ -52,7 +56,7 @@ nothing has been changed.
 
 For subsequent releases, you add a changeset to a release description:
 
-  my:v_0_02
+  my:v_0-02
     a           :Version ;
     dc:issued   "2007-12-29"^^xsd:date ;
     :revision   "0.02"^^xsd:string ;
@@ -78,11 +82,12 @@ of other properties in DOAP which you can also use.
     a           :Project ;
     :name       "Example-Example" ;
     :shortdesc  "Just an example!" ;
+    :programming-language "Perl" ;
     :created    "2007-12-18"^^xsd:date ;
     :maintainer my:developer ;
     :homepage   <http://search.cpan.example.org/dist/Example-Example/> ;
     :bug-database <http://rt.cpan.example.org/Dist/Display.html?Queue=Example-Example> ;
-    :release    my:v_0_01 , my:v_0_02 .
+    :release    my:v_0-01 , my:v_0-02 .
 
 =head2 Describing a Developer
 
@@ -105,7 +110,7 @@ so I discourage using this vocab.
 
 L<Module::Install>, L<Module::Install::DOAPChangeSets> .
 
-L<http://www.perlrdf.org/>.
+L<http://www.perlrdf.org/>, L<http://purl.org/NET/cpan-uri/>.
 
 =head1 AUTHOR
 
