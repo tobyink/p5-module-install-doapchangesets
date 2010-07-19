@@ -20,7 +20,9 @@ RDF::DOAP::ChangeSets - create pretty ChangeLogs from RDF
 
 package RDF::DOAP::ChangeSets;
 
+use 5.008;
 use strict;
+
 use File::Slurp qw(slurp);
 use LWP::Simple;
 use Perl::Version;
@@ -28,10 +30,7 @@ use RDF::Trine;
 use RDF::Query;
 use Text::Wrap;
 
-use vars qw{$VERSION};
-BEGIN {
-	$VERSION = '0.04';
-}
+our $VERSION = '0.100';
 
 =head1 DESCRIPTION
 
@@ -234,8 +233,12 @@ sub to_string
 				if $version->{'name'};
 			$rv.= "\n";
 			
+			my @changes = sort {
+				$a->{type} cmp $b->{type} || $a->{label} cmp $b->{label}
+				} values %{$version->{'c'}};
+			
 			# foreach change
-			foreach my $change (values %{$version->{'c'}})
+			foreach my $change (@changes)
 			{
 				my $sigil = '';
 				if (defined $change->{'type'}
@@ -582,7 +585,6 @@ Please report any bugs to L<http://rt.cpan.org/>.
 L<RDF::Trine>, L<Module::Install::DOAPChangeSets>.
 
 L<http://www.perlrdf.org/>.
-
 
 =head1 AUTHOR
 

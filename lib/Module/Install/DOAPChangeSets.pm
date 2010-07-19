@@ -1,14 +1,10 @@
 package Module::Install::DOAPChangeSets;
 
-use strict;
 use 5.008;
-use Module::Install::Base ();
+use base qw(Module::Install::Base);
+use strict;
 
-use vars qw{$VERSION @ISA};
-BEGIN {
-        $VERSION = '0.04';
-        @ISA     = 'Module::Install::Base';
-}
+our $VERSION = '0.100';
 
 sub write_doap_changes {
 	my $self = shift;
@@ -74,8 +70,7 @@ Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
 
 Copyright (C) 2010 by Toby Inkster
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.8 or,
-at your option, any later version of Perl 5 you may have available.
+This library is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
 
 =cut

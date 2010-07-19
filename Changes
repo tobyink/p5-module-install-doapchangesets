@@ -10,6 +10,10 @@ Home page:    <http://search.cpan.org/dist/Module-Install-DOAPChangeSets/>
 Bug tracker:  <http://rt.cpan.org/Dist/Display.html?Queue=Module-Install-DOAPChangeSets>
 Maintainer:   Toby Inkster <mailto:tobyink@cpan.org>
 
+0.100 [2010-07-18]
+ - Sort change items within each version for text output.
+ - Use RDF::Trine::Serializer::RDFXML for XML output.
+
 0.04 [2010-04-07]
  - (Update) Best practice is to use http://purl.org/NET/cpan-uri/.
 

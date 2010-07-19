@@ -1,16 +1,16 @@
 package Module::Install::Admin::DOAPChangeSets;
 
+use 5.008;
+use base qw(Module::Install::Base);
 use strict;
+
 use RDF::DOAP::ChangeSets;
+use RDF::Trine;
 use File::Slurp qw(slurp);
 use URI::file;
 use Module::Install::Base;
 
-use vars qw{$VERSION @ISA};
-BEGIN {
-	$VERSION = '0.04';
-	@ISA     = qw{Module::Install::Base};
-}
+our $VERSION = '0.100';
 
 sub write_doap_changes
 {
@@ -34,8 +34,21 @@ sub write_doap_changes_xml
 	my $out  = shift || "Changes.xml";
 	my $fmt  = shift || "turtle";
 	
-	my $r = system("rapper -q -i $fmt -o rdfxml-abbrev $in >$out");
-	warn "Error running 'rapper'\n" if $r;
+	my $data  = slurp($in);
+	my $inuri = URI::file->new_abs($in);
+	
+	my $changeset = RDF::DOAP::ChangeSets->new($inuri, undef, 'auto', $fmt);
+	my $rdfxml    = RDF::Trine::Serializer::RDFXML->new(namespaces => {
+		dbug    => 'http://ontologi.es/doap-bugs#',
+		dc      => 'http://purl.org/dc/terms/',
+		dcs     => 'http://ontologi.es/doap-changeset#',
+		doap    => 'http://usefulinc.com/ns/doap#',
+		foaf    => 'http://xmlns.com/foaf/0.1/',
+		rdfs    => 'http://www.w3.org/2000/01/rdf-schema#',
+		});
+	open my $fh, ">$out";
+	
+	close $fh;
 }
 
 1;
