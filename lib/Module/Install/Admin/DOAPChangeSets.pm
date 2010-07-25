@@ -10,7 +10,7 @@ use File::Slurp qw(slurp);
 use URI::file;
 use Module::Install::Base;
 
-our $VERSION = '0.100';
+our $VERSION = '0.101';
 
 sub write_doap_changes
 {
@@ -47,6 +47,7 @@ sub write_doap_changes_xml
 		rdfs    => 'http://www.w3.org/2000/01/rdf-schema#',
 		});
 	open my $fh, ">$out";
+	$rdfxml->serialize_model_to_file($fh, $changeset->{'model'});
 	
 	close $fh;
 }

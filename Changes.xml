@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:dbug="http://ontologi.es/doap-bugs#" xmlns:dc="http://purl.org/dc/terms/" xmlns:dcs="http://ontologi.es/doap-changeset#" xmlns:doap="http://usefulinc.com/ns/doap#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r0">
+	<dcs:item rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r1"/>
+	<dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_01"/>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r1">
+	<rdfs:label xml:lang="en">Don't recommend QNames containing '.' -- they're supported by libraptor, but illegal in Turtle.</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r10">
+	<dcs:item rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r11"/>
+	<dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v-0_01"/>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r11">
+	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Bugfix"/>
+	<rdfs:label xml:lang="en">Project name was being overridden by URI.</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r12">
+	<dcs:item rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r13"/>
+	<dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-02"/>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r13">
+	<rdfs:label xml:lang="en">Use Perl::Version to sort revisions in output.</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r14">
+	<dcs:item rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r15"/>
+	<dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-03"/>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r15">
+	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Update"/>
+	<rdfs:label xml:lang="en">Best practice is to use http://purl.org/NET/cpan-uri/.</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r16">
+	<dcs:item rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r17"/>
+	<dcs:item rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r18"/>
+	<dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-04"/>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r17">
+	<rdfs:label xml:lang="en">Use RDF::Trine::Serializer::RDFXML for XML output.</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r18">
+	<rdfs:label xml:lang="en">Sort change items within each version for text output.</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r19">
+	<dcs:item rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r20"/>
+	<dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-100"/>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r2">
+	<dcs:item rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r3"/>
+	<dcs:item rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r4"/>
+	<dcs:item rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r5"/>
+	<dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_02"/>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r20">
+	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Bugix"/>
+	<rdfs:label xml:lang="en">XML output no longer just an empty file!</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r21">
+	<doap:browse rdf:resource="http://goddamn.co.uk/viewvc/perlmods/Module-Install-DOAPChangeSets/"/>
+	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#SVNRepository"/>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r3">
+	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Addition"/>
+	<rdfs:label xml:lang="en">Support Aaron Cope's changefile vocab as a legacy input format.</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r4">
+	<rdfs:label xml:lang="en">Reverse order of versions in Changelog (newest at top)</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r5">
+	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Addition"/>
+	<rdfs:label xml:lang="en">Use Text::Wrap to wrap text.</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r6">
+	<dcs:item rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r7"/>
+	<dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_03"/>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r7">
+	<rdfs:label xml:lang="en">Split out RDF::DOAP::ChangeSets as a separate Perl module.</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r8">
+	<dcs:item rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r9"/>
+	<dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_04"/>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r9">
+	<rdfs:label xml:lang="en">Documentation improvements.</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="file:///home/tai/src/perlmods/Module-Install-DOAPChangeSets/Changes.ttl">
+	<dc:creator rdf:resource="http://tobyinkster.co.uk/#i"/>
+	<dc:description xml:lang="en">Revision history for Perl extension Module::Install::DOAPChangeSets.</dc:description>
+	<dc:subject rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/project"/>
+	<dc:title>Changes</dc:title>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/project">
+	<doap:bug-database rdf:resource="http://rt.cpan.org/Dist/Display.html?Queue=Module-Install-DOAPChangeSets"/>
+	<doap:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-08</doap:created>
+	<doap:developer rdf:resource="http://tobyinkster.co.uk/#i"/>
+	<doap:documenter rdf:resource="http://tobyinkster.co.uk/#i"/>
+	<doap:download-page rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/"/>
+	<doap:homepage rdf:resource="http://search.cpan.org/dist/Module-Install-DOAPChangeSets/"/>
+	<doap:license rdf:resource="http://dev.perl.org/licenses/"/>
+	<doap:maintainer rdf:resource="http://tobyinkster.co.uk/#i"/>
+	<doap:name>Module-Install-DOAPChangeSets</doap:name>
+	<doap:programming-language>Perl</doap:programming-language>
+	<doap:release rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_01"/>
+	<doap:release rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_02"/>
+	<doap:release rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_03"/>
+	<doap:release rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_04"/>
+	<doap:release rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-01"/>
+	<doap:release rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-02"/>
+	<doap:release rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-03"/>
+	<doap:release rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-04"/>
+	<doap:release rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-100"/>
+	<doap:release rdf:resource="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-101"/>
+	<doap:repository rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r21"/>
+	<doap:shortdesc xml:lang="en">write your distribution change log in RDF</doap:shortdesc>
+	<doap:tester rdf:resource="http://tobyinkster.co.uk/#i"/>
+	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Project"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_01">
+	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-08</dc:issued>
+	<doap:file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.00_01.tar.gz"/>
+	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.00_01</doap:revision>
+	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Version"/>
+	<rdfs:comment xml:lang="en">Developer preview.</rdfs:comment>
+	<rdfs:label>Omega 1</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_02">
+	<dcs:changeset rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r0"/>
+	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-08</dc:issued>
+	<doap:file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.00_02.tar.gz"/>
+	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.00_02</doap:revision>
+	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Version"/>
+	<rdfs:comment xml:lang="en">Developer preview.</rdfs:comment>
+	<rdfs:label>Omega 2</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_03">
+	<dcs:changeset rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r2"/>
+	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-11</dc:issued>
+	<doap:file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.00_03.tar.gz"/>
+	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.00_03</doap:revision>
+	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Version"/>
+	<rdfs:comment xml:lang="en">Developer preview.</rdfs:comment>
+	<rdfs:label>Omega 3</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-00_04">
+	<dcs:changeset rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r6"/>
+	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-13</dc:issued>
+	<doap:file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.00_04.tar.gz"/>
+	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.00_04</doap:revision>
+	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Version"/>
+	<rdfs:comment xml:lang="en">Developer preview.</rdfs:comment>
+	<rdfs:label>Omega 4</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-01">
+	<dcs:changeset rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r8"/>
+	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-18</dc:issued>
+	<doap:file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.01.tar.gz"/>
+	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.01</doap:revision>
+	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Version"/>
+	<rdfs:comment xml:lang="en">First vaguely stable release.</rdfs:comment>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-02">
+	<dcs:changeset rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r10"/>
+	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-27</dc:issued>
+	<doap:file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.02.tar.gz"/>
+	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.02</doap:revision>
+	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Version"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-03">
+	<dcs:changeset rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r12"/>
+	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-03-26</dc:issued>
+	<doap:file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.03.tar.gz"/>
+	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.03</doap:revision>
+	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Version"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-04">
+	<dcs:changeset rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r14"/>
+	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-04-07</dc:issued>
+	<doap:file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.04.tar.gz"/>
+	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.04</doap:revision>
+	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Version"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-100">
+	<dcs:changeset rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r16"/>
+	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-07-18</dc:issued>
+	<doap:file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.100.tar.gz"/>
+	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.100</doap:revision>
+	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Version"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/Module-Install-DOAPChangeSets/v_0-101">
+	<dcs:changeset rdf:nodeID="rF035283894F911DFBFECD96B53AD4BF5r19"/>
+	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-07-21</dc:issued>
+	<doap:file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.101.tar.gz"/>
+	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.101</doap:revision>
+	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Version"/>
+</rdf:Description>
+<rdf:Description xmlns:ns1="http://www.w3.org/2002/07/owl#" rdf:about="http://tobyinkster.co.uk/#i">
+	<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+	<ns1:sameAs rdf:resource="http://purl.org/NET/cpan-uri/person/tobyink"/>
+	<foaf:homepage rdf:resource="http://tobyinkster.co.uk/"/>
+	<foaf:mbox rdf:resource="mailto:tobyink@cpan.org"/>
+	<foaf:name>Toby Inkster</foaf:name>
+	<foaf:page rdf:resource="http://search.cpan.org/~tobyink/"/>
+</rdf:Description>
+</rdf:RDF>

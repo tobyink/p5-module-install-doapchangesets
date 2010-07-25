@@ -29,7 +29,9 @@ resources(
 	'repository' => "http://goddamn.co.uk/viewvc/perlmods/$dist/",
 	'bugtracker' => "http://rt.cpan.org/Dist/Display.html?Queue=$dist",
 	);
-	
+
+keywords 'RDF', 'Semantic Web', 'CPAN', 'DOAP', 'Perl', 'Changes';
+
 write_doap_changes;
 write_doap_changes_xml;
 
