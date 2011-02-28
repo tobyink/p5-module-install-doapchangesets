@@ -1,3 +1,4 @@
+TODO
 Changes
 Changes.ttl
 Changes.xml
@@ -13,7 +14,6 @@ lib/Module/Install/Admin/DOAPChangeSets.pm
 lib/Module/Install/DOAPChangeSets.pm
 lib/RDF/DOAP/ChangeSets.pm
 
-t/00sig.t
 t/01basic.t
 
 inc/Module/Install.pm
