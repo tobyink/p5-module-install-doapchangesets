@@ -10,7 +10,7 @@ use File::Slurp qw(slurp);
 use URI::file;
 use Module::Install::Base;
 
-our $VERSION = '0.101';
+our $VERSION = '0.102';
 
 sub write_doap_changes
 {

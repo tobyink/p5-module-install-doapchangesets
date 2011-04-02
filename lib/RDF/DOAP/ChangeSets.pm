@@ -30,7 +30,7 @@ use RDF::Trine;
 use RDF::Query;
 use Text::Wrap;
 
-our $VERSION = '0.101';
+our $VERSION = '0.102';
 
 =head1 DESCRIPTION
 
@@ -219,7 +219,10 @@ sub to_string
 		$self->_release_data($project);
 		
 		my @revisions = sort {
-			Perl::Version->new($b->{'revision'}) cmp Perl::Version->new($a->{'revision'})
+			if (exists $b->{'issued'} and exists $a->{'issued'})
+				{ $b->{'issued'} cmp $a->{'issued'} or Perl::Version->new($b->{'revision'}) cmp Perl::Version->new($a->{'revision'}); }
+			else
+				{ Perl::Version->new($b->{'revision'}) cmp Perl::Version->new($a->{'revision'}); }
 		} values %{$projects->{$project}->{'v'}};
 		
 		# foreach version
@@ -241,10 +244,14 @@ sub to_string
 			foreach my $change (@changes)
 			{
 				my $sigil = '';
-				if (defined $change->{'type'}
-				and $change->{'type'} =~ m!doap.changeset.(.+)$!)
+				if (defined $change->{'type'} and ref($change->{'type'}) eq 'ARRAY')
 				{
-					$sigil = '('.$1.') ';
+					$sigil = join ' ',
+						sort
+						map { m!doap.changeset.(.+)$!; $1; }
+						grep { m!doap.changeset.(.+)$! }
+						@{ $change->{'type'} };
+					$sigil = "(${sigil}) " if length $sigil;
 				}
 				# Bullet point
 				$rv.= wrap(' - ', '   ', sprintf("%s%s", $sigil, $change->{'label'})) . "\n";
@@ -505,7 +512,7 @@ sub _release_data__current
 			my $c = $row->{'item'}->as_ntriples;
 			$projects->{$p}->{'v'}->{$v}->{'c'}->{$c}->{'label'} = $row->{'itemlabel'}->literal_value
 				if UNIVERSAL::isa($row->{'itemlabel'}, 'RDF::Trine::Node::Literal');
-			$projects->{$p}->{'v'}->{$v}->{'c'}->{$c}->{'type'} = $row->{'itemtype'}->uri
+			push @{ $projects->{$p}->{'v'}->{$v}->{'c'}->{$c}->{'type'} }, $row->{'itemtype'}->uri
 				if UNIVERSAL::isa($row->{'itemtype'}, 'RDF::Trine::Node::Resource')
 				and $row->{'itemtype'}->uri ne 'http://ontologi.es/doap-changeset#Change';
 		}
@@ -562,7 +569,7 @@ sub _release_data__legacy
 				
 				if ($u =~ m'^http://aaronland.info/ns/changefile/(addition|update|bugfix|removal)$')
 				{
-					$projects->{$p}->{'v'}->{$v}->{'c'}->{$c}->{'type'} =
+					push @{ $projects->{$p}->{'v'}->{$v}->{'c'}->{$c}->{'type'} },
 						'http://ontologi.es/doap-changeset#'.(ucfirst $1);
 				}
 			}
