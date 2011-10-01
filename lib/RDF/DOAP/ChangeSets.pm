@@ -30,7 +30,7 @@ use RDF::Trine;
 use RDF::Query;
 use Text::Wrap;
 
-our $VERSION = '0.102';
+our $VERSION = '0.200';
 
 =head1 DESCRIPTION
 
@@ -70,7 +70,7 @@ sub new
 	my $inuri = shift;
 	my $data  = shift;
 	my $type  = shift || 'auto';
-	
+
 	my $model;
 	if (ref $data and $data->isa('RDF::Trine::Model'))
 	{
@@ -179,10 +179,10 @@ sub to_string
 	# Get project data for all projects described in the model.
 	$self->_project_data;
 	
-	# Heading
-	$rv.= "#" x 76 . "\n";
-	$rv.= "## " . $self->{'doctitle'} . " " . ("#" x (72 - length $self->{'doctitle'})) . "\n";
-	$rv.= "#" x 76 . "\n\n";
+#	# Heading
+#	$rv.= "#" x 76 . "\n";
+#	$rv.= "## " . $self->{'doctitle'} . " " . ("#" x (72 - length $self->{'doctitle'})) . "\n";
+#	$rv.= "#" x 76 . "\n\n";
 	
 	# Create a shortcut to the data.
 	my $projects = $self->{'projects'};	
@@ -230,14 +230,14 @@ sub to_string
 		{
 			# Version number, release data and version name.
 			$rv.= $version->{'revision'};
-			$rv.= sprintf(' [%s]', $version->{'issued'})
+			$rv.= sprintf('  %s', $version->{'issued'})
 				if $version->{'issued'};
-			$rv.= sprintf(' # %s', $version->{'name'})
+			$rv.= sprintf("\n# %s", $version->{'name'})
 				if $version->{'name'};
-			$rv.= "\n";
+			$rv.= "\n\n";
 			
 			my @changes = sort {
-				$a->{type} cmp $b->{type} || $a->{label} cmp $b->{label}
+				$a->{type} cmp $b->{type} or $a->{label} cmp $b->{label}
 				} values %{$version->{'c'}};
 			
 			# foreach change
@@ -589,7 +589,7 @@ Please report any bugs to L<http://rt.cpan.org/>.
 
 =head1 SEE ALSO
 
-L<RDF::Trine>, L<Module::Install::DOAPChangeSets>.
+L<RDF::Trine>, L<CPAN::Changes::Spec>, L<Module::Install::DOAPChangeSets>.
 
 L<http://www.perlrdf.org/>.
 
@@ -599,7 +599,7 @@ Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
 
 =head1 COPYRIGHT
 
-Copyright 2010 Toby Inkster
+Copyright 2010-2011 Toby Inkster
 
 This library is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

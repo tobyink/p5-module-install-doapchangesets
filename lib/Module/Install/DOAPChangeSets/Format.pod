@@ -10,7 +10,7 @@ module supports any input format recognised by L<RDF::Trine>.)
 
 This document assumes a good working knowledge of RDF and Turtle.
 
-You would normally describe your project in a file called "Changes.ttl"
+You would normally describe your project in a file called "meta/changes.ttl"
 from which a changelog called "Changes" will be automatically built 
 at packaging time.
 
@@ -118,7 +118,7 @@ Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2010 by Toby Inkster
+Copyright (C) 2010-2011 by Toby Inkster
 
 This library is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

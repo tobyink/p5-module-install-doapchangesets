@@ -1,5 +1,3 @@
-#############################################################
-
 @prefix :        <http://usefulinc.com/ns/doap#> .
 @prefix dcs:     <http://ontologi.es/doap-changeset#> .
 @prefix dc:      <http://purl.org/dc/terms/> .
@@ -9,19 +7,8 @@
 @prefix toby:    <http://tobyinkster.co.uk/#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
-#############################################################
-
-<>
-
-	dc:title         "Changes" ;
-	dc:description   "Revision history for Perl extension Module::Install::DOAPChangeSets."@en ;
-	dc:subject       my:project ;
-	dc:creator       toby:i .
-
-#############################################################
-
+my:project :release my:v_0-00_01 .
 my:v_0-00_01
-
 	a               :Version ;
 	dc:issued       "2010-01-08"^^xsd:date ;
 	:revision       "0.00_01"^^xsd:string ;
@@ -29,8 +16,8 @@ my:v_0-00_01
 	rdfs:label      "Omega 1" ;
 	rdfs:comment    "Developer preview."@en .
 
+my:project :release my:v_0-00_02 .
 my:v_0-00_02
-
 	a               :Version ;
 	dc:issued	"2010-01-08"^^xsd:date ;
 	:revision	"0.00_02"^^xsd:string ;
@@ -42,8 +29,8 @@ my:v_0-00_02
 		dcs:item   [ rdfs:label "Don't recommend QNames containing '.' -- they're supported by libraptor, but illegal in Turtle."@en ]
 	] .
 
+my:project :release my:v_0-00_03 .
 my:v_0-00_03
-
 	a               :Version ;
 	dc:issued       "2010-01-11"^^xsd:date ;
 	:revision       "0.00_03"^^xsd:string ;
@@ -57,8 +44,8 @@ my:v_0-00_03
 		dcs:item   [ rdfs:label "Use Text::Wrap to wrap text."@en ; a dcs:Addition ]
 	] .
 
+my:project :release my:v_0-00_04 .
 my:v_0-00_04
-
 	a               :Version ;
 	dc:issued       "2010-01-13"^^xsd:date ;
 	:revision       "0.00_04"^^xsd:string ;
@@ -70,8 +57,8 @@ my:v_0-00_04
 		dcs:item   [ rdfs:label "Split out RDF::DOAP::ChangeSets as a separate Perl module."@en ]
 	] .
 
+my:project :release my:v_0-01 .
 my:v_0-01
-
 	a               :Version ;
 	dc:issued       "2010-01-18"^^xsd:date ;
 	:revision       "0.01"^^xsd:string ;
@@ -82,8 +69,8 @@ my:v_0-01
 		dcs:item   [ rdfs:label "Documentation improvements."@en ]
 	] .
 
+my:project :release my:v_0-02 .
 my:v_0-02
-
 	a               :Version ;
 	dc:issued       "2010-01-27"^^xsd:date ;
 	:revision       "0.02"^^xsd:string ;
@@ -93,8 +80,8 @@ my:v_0-02
 		dcs:item   [ rdfs:label "Project name was being overridden by URI."@en ; a dcs:Bugfix ]
 	] .
 
+my:project :release my:v_0-03 .
 my:v_0-03
-
 	a               :Version ;
 	dc:issued       "2010-03-26"^^xsd:date ;
 	:revision       "0.03"^^xsd:string ;
@@ -104,8 +91,8 @@ my:v_0-03
 		dcs:item   [ rdfs:label "Use Perl::Version to sort revisions in output."@en ]
 	] .
 
+my:project :release my:v_0-04 .
 my:v_0-04
-
 	a               :Version ;
 	dc:issued       "2010-04-07"^^xsd:date ;
 	:revision       "0.04"^^xsd:string ;
@@ -115,8 +102,8 @@ my:v_0-04
 		dcs:item   [ rdfs:label "Best practice is to use http://purl.org/NET/cpan-uri/."@en ; a dcs:Update ]
 	] .
 
+my:project :release my:v_0-100 .
 my:v_0-100
-
 	a               :Version ;
 	dc:issued       "2010-07-18"^^xsd:date ;
 	:revision       "0.100"^^xsd:string ;
@@ -127,8 +114,8 @@ my:v_0-100
 		dcs:item   [ rdfs:label "Sort change items within each version for text output."@en ]
 	] .
 
+my:project :release my:v_0-101 .
 my:v_0-101
-
 	a               :Version ;
 	dc:issued       "2010-07-21"^^xsd:date ;
 	:revision       "0.101"^^xsd:string ;
@@ -138,8 +125,8 @@ my:v_0-101
 		dcs:item   [ rdfs:label "XML output no longer just an empty file!"@en ; a dcs:Bugfix ]
 	] .
 
+my:project :release my:v_0-102 .
 my:v_0-102
-
 	a               :Version ;
 	dc:issued       "2011-04-02"^^xsd:date ;
 	:revision       "0.102"^^xsd:string ;
@@ -150,37 +137,27 @@ my:v_0-102
 		dcs:item   [ rdfs:label "Allow change items to have multiple RDF types."@en ]
 	] .
 
-#############################################################
+my:project :release my:v_0-103 .
+my:v_0-103
+	a               :Version ;
+	dc:issued       "2011-09-30"^^xsd:date ;
+	:revision       "0.103"^^xsd:string ;
+	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.103.tar.gz> ;
+	dcs:changeset [
+		dcs:versus my:v_0-102 ;
+		dcs:item   [ rdfs:label "Output is now compliant with CPAN::Changes::Spec."@en ] ;
+		dcs:item   [ rdfs:label "Default input file is now called 'meta/changes.ttl'."@en ]
+	] .
 
-my:project
+my:project :release my:v_0-200 .
+my:v_0-200
 
-	a               :Project ;
-	:name           "Module-Install-DOAPChangeSets" ;
-	:shortdesc      "write your distribution change log in RDF"@en ;
-	:programming-language  "Perl" ;
-	:homepage       <https://metacpan.org/release/Module-Install-DOAPChangeSets> ;
-	:download-page  <https://metacpan.org/release/Module-Install-DOAPChangeSets> ;
-	:bug-database   <http://rt.cpan.org/Dist/Display.html?Queue=Module-Install-DOAPChangeSets> ;
-	:repository     [ a :SVNRepository ; :browse <http://goddamn.co.uk/svn-web/perlmods/browse/Module-Install-DOAPChangeSets/> ] ;
-	:maintainer     toby:i ;
-	:developer      toby:i ;
-	:documenter     toby:i ;
-	:tester         toby:i ;
-	:created        "2010-01-08"^^xsd:date ;
-	:license        <http://dev.perl.org/licenses/> ;
-	:release        my:v_0-00_01 , my:v_0-00_02 , my:v_0-00_03 , my:v_0-00_04 , 
-	                my:v_0-01 , my:v_0-02 , my:v_0-03 , my:v_0-04 ,
-	                my:v_0-100 , my:v_0-101 , my:v_0-102 .
-
-#############################################################
-
-toby:i
-
-	a               foaf:Person ;
-	foaf:name       "Toby Inkster" ;
-	foaf:homepage   <http://tobyinkster.co.uk/> ;
-	foaf:page       <https://metacpan.org/author/TOBYINK> ;
-	foaf:mbox       <mailto:tobyink@cpan.org> ;
-	<http://www.w3.org/2002/07/owl#sameAs> <http://purl.org/NET/cpan-uri/person/tobyink> .
-
-#############################################################
+	a               :Version ;
+	dc:issued       "2011-10-01"^^xsd:date ;
+	:revision       "0.200"^^xsd:string ;
+	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.200.tar.gz> ;
+	dcs:changeset [
+		dcs:versus my:v_0-103 ;
+		dcs:item   [ rdfs:label "Will use data from Module::Install::RDF in favour of 'meta/changes.ttl', if 'rdf_metadata' has been called prior to 'write_doap_changes'."@en ] ;
+		dcs:item   [ rdfs:label "No longer produces top heading for Changes file: just a smaller heading for each project. (And there will rarely be more than one project described.)"@en ; a dcs:Removal ]
+	] .
