@@ -151,7 +151,6 @@ my:v_0-103
 
 my:project :release my:v_0-200 .
 my:v_0-200
-
 	a               :Version ;
 	dc:issued       "2011-10-01"^^xsd:date ;
 	:revision       "0.200"^^xsd:string ;
@@ -160,4 +159,15 @@ my:v_0-200
 		dcs:versus my:v_0-103 ;
 		dcs:item   [ rdfs:label "Will use data from Module::Install::RDF in favour of 'meta/changes.ttl', if 'rdf_metadata' has been called prior to 'write_doap_changes'."@en ] ;
 		dcs:item   [ rdfs:label "No longer produces top heading for Changes file: just a smaller heading for each project. (And there will rarely be more than one project described.)"@en ; a dcs:Removal ]
+	] .
+
+my:project :release my:v_0-201 .
+my:v_0-201
+	a               :Version ;
+	dc:issued       "2011-10-06"^^xsd:date ;
+	:revision       "0.201"^^xsd:string ;
+	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.201.tar.gz> ;
+	dcs:changeset [
+		dcs:versus my:v_0-200 ;
+		dcs:item   [ a dcs:Packaging ; rdfs:label "Upgrade Module::Package::RDF version."@en ] 
 	] .
