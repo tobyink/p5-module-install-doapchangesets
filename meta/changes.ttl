@@ -171,3 +171,15 @@ my:v_0-201
 		dcs:versus my:v_0-200 ;
 		dcs:item   [ a dcs:Packaging ; rdfs:label "Upgrade Module::Package::RDF version."@en ] 
 	] .
+
+my:project :release my:v_0-202 .
+my:v_0-202
+	a               :Version ;
+	dc:issued       "2012-01-18"^^xsd:date ;
+	:revision       "0.202"^^xsd:string ;
+	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.202.tar.gz> ;
+	dcs:changeset [
+		dcs:versus my:v_0-201 ;
+		dcs:item   [ a dcs:Addition ; rdfs:label "Support 'dcs:blame'."@en ] ;
+		dcs:item   [ rdfs:label "Improved sort order of change items within each version."@en ]
+	] .

@@ -30,7 +30,7 @@ use RDF::Trine;
 use RDF::Query;
 use Text::Wrap;
 
-our $VERSION = '0.201';
+our $VERSION = '0.202';
 
 =head1 DESCRIPTION
 
@@ -232,30 +232,43 @@ sub to_string
 			$rv.= $version->{'revision'};
 			$rv.= sprintf('  %s', $version->{'issued'})
 				if $version->{'issued'};
-			$rv.= sprintf("\n# %s", $version->{'name'})
+			$rv.= sprintf("  # %s", $version->{'name'})
 				if $version->{'name'};
 			$rv.= "\n\n";
 			
-			my @changes = sort {
-				$a->{type} cmp $b->{type} or $a->{label} cmp $b->{label}
-				} values %{$version->{'c'}};
-			
-			# foreach change
-			foreach my $change (@changes)
-			{
-				my $sigil = '';
-				if (defined $change->{'type'} and ref($change->{'type'}) eq 'ARRAY')
+			my @changes = map
 				{
-					$sigil = join ' ',
-						sort
-						map { m!doap.changeset.(.+)$!; $1; }
-						grep { m!doap.changeset.(.+)$! }
-						@{ $change->{'type'} };
-					$sigil = "(${sigil}) " if length $sigil;
+					my $change = $_;
+					
+					my $sigil = '';
+					if (defined $change->{'type'} and ref($change->{'type'}) eq 'ARRAY')
+					{
+						$sigil = join ' ',
+							sort
+							map { m!doap.changeset.(.+)$!; $1; }
+							grep { m!doap.changeset.(.+)$! }
+							@{ $change->{'type'} };
+						$sigil = "(${sigil}) " if length $sigil;
+					}
+					# Bullet point
+					my $ret = wrap(' - ', '   ', sprintf("%s%s", $sigil, $change->{'label'})) . "\n";
+					
+					my %blame = %{ $change->{blame} || {}};
+					foreach $b (values %blame)
+					{
+						if (defined $b->{nick})
+							{ $ret .= sprintf("   ++\$%s\n", $b->{nick}) }
+						elsif (defined $b->{name})
+							{ $ret .= sprintf("   ++\"%s\"\n", $b->{name}) }
+						elsif (defined $b->{uri})
+							{ $ret .= sprintf("   ++q<%s>\n", $b->{uri}) }
+					}
+					
+					$ret;
 				}
-				# Bullet point
-				$rv.= wrap(' - ', '   ', sprintf("%s%s", $sigil, $change->{'label'})) . "\n";
-			}
+				values %{$version->{'c'}};
+			
+			$rv.= join q{}, sort @changes;
 			$rv.= "\n";
 		}
 		
@@ -489,6 +502,12 @@ sub _release_data__current
 			?version dcs:changeset [ dcs:item ?item ] .
 			OPTIONAL { ?item a ?itemtype . }
 			OPTIONAL { ?item rdfs:label ?itemlabel . }
+			OPTIONAL {
+				?item dcs:blame ?blame .
+				OPTIONAL { ?blame foaf:nick ?blamenick . }
+				OPTIONAL { ?blame foaf:name ?blamename . }
+				OPTIONAL { ?blame rdfs:label ?blamename . }
+			}
 		}
 	}
 	";
@@ -515,7 +534,18 @@ sub _release_data__current
 			push @{ $projects->{$p}->{'v'}->{$v}->{'c'}->{$c}->{'type'} }, $row->{'itemtype'}->uri
 				if UNIVERSAL::isa($row->{'itemtype'}, 'RDF::Trine::Node::Resource')
 				and $row->{'itemtype'}->uri ne 'http://ontologi.es/doap-changeset#Change';
-		}
+			$projects->{$p}->{'v'}->{$v}->{'c'}->{$c}->{'blame'} = {};
+			
+			if (UNIVERSAL::isa($row->{'blame'}, 'RDF::Trine::Node'))
+			{
+				my $b = $row->{'blame'}->as_ntriples;
+				$projects->{$p}->{'v'}->{$v}->{'c'}->{$c}->{'blame'}->{$b} = {
+						uri  => $row->{'blame'}->is_resource ? $row->{'blame'}->uri : undef,
+						name => $row->{'blamename'}&&$row->{'blamename'}->is_literal ? $row->{'blamename'}->literal_value : undef,
+						nick => $row->{'blamenick'}&&$row->{'blamenick'}->is_literal ? $row->{'blamenick'}->literal_value : undef,
+					};
+			}
+		}		
 	}
 }
 
@@ -562,6 +592,7 @@ sub _release_data__legacy
 			my $c = $row->{'itemlabel'}->as_ntriples;
 			$projects->{$p}->{'v'}->{$v}->{'c'}->{$c}->{'label'} = $row->{'itemlabel'}->literal_value
 				if UNIVERSAL::isa($row->{'itemlabel'}, 'RDF::Trine::Node::Literal');
+			$projects->{$p}->{'v'}->{$v}->{'c'}->{$c}->{'blame'} = {};
 				
 			if (UNIVERSAL::isa($row->{'itemtype'}, 'RDF::Trine::Node::Resource'))
 			{
