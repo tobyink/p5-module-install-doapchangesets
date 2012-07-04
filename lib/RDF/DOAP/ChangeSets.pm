@@ -1,23 +1,3 @@
-#!/usr/bin/perl
-
-=head1 NAME
-
-RDF::DOAP::ChangeSets - create pretty ChangeLogs from RDF
-
-=head1 SYNOPSIS
-
- use RDF::DOAP::ChangeSets;
- use URI::file;
- 
- my $file     = 'path/to/changelog.rdf';
- my $file_uri = URI::file->new_abs($file);
- 
- my $dcs = RDF::DOAP::ChangeSets->new(
-             $file_uri, undef, undef, 'RDFXML');
- print $dcs->to_string;
-
-=cut
-
 package RDF::DOAP::ChangeSets;
 
 use 5.008;
@@ -31,38 +11,6 @@ use RDF::Query;
 use Text::Wrap;
 
 our $VERSION = '0.203';
-
-=head1 DESCRIPTION
-
-This module takes software changelogs written in the RDF DOAP
-Change Sets vocabulary and produces human-readable changelogs.
-
-=over
-
-=item C<< RDF::DOAP::ChangeSets->new($uri, $data, $type, $fmt) >>
-
-Creates and initialises an object.
-
-$uri is a URL for the input data. The URL is used to query the
-RDF data for the heading of the output changelog. It may be passed
-as either a string, or a L<URI> object.
-
-$data is the RDF data to use as input. It may be passed as a
-string, or as an L<RDF::Trine::Model> object. If undefined,
-this module will attempt to read data from the URL using
-L<LWP::Simple>.
-
-$type gives the constructor a hint as to the RDF vocabulary you
-are using. For DOAP Change Sets, use 'current'; for Aaron Cope's
-Changefile vocab, use 'legacy'; to autodetect, use 'auto'. By
-default, performs autodetection. This module may crash and burn
-if you try to mix both vocabs!!
-
-$fmt provides a hint as to what RDF format you're using. By
-default, Turtle is assumed. Valid values are whatever
-RDF::Trine::Parser->new accepts.
-
-=cut
 
 sub new
 {
@@ -117,23 +65,11 @@ sub new
 	bless $self, $class;
 }
 
-=item C<< $changeset->is_legacy >>
-
-Boolean, indicating if a legacy vocab is being used.
-
-=cut
-
 sub is_legacy
 {
 	my $self = shift;
 	return (lc $self->{'type'} eq 'legacy');
 }
-
-=item C<< $changeset->is_current >>
-
-Boolean, indicating if the current vocab is being used.
-
-=cut
 
 sub is_current
 {
@@ -141,35 +77,17 @@ sub is_current
 	return !$self->is_legacy(@_);
 }
 
-=item C<< $changeset->model >>
-
-RDF::Trine::Model object representing the changelog data.
-
-=cut
-
 sub model
 {
 	my $self = shift;
 	return $self->{'model'};
 }
 
-=item C<< $changeset->uri >>
-
-String representing the changelog URI.
-
-=cut
-
 sub uri
 {
 	my $self = shift;
 	return $self->{'uri'} . '';
 }
-
-=item C<< $changeset->to_string >>
-
-Creates a human-readable representation of the changelog.
-
-=cut
 
 sub to_string
 {
@@ -276,12 +194,6 @@ sub to_string
 
 	return $rv;
 }
-
-=item C<< $changeset->to_file($filename) >>
-
-Same as C<to_string>, but outputs to a file.
-
-=cut
 
 sub to_file
 {
@@ -503,7 +415,7 @@ sub _release_data__current
 			OPTIONAL { ?item a ?itemtype . }
 			OPTIONAL { ?item rdfs:label ?itemlabel . }
 			OPTIONAL {
-				?item dcs:blame ?blame .
+				?item dcs:blame|dcs:thanks ?blame .
 				OPTIONAL { ?blame foaf:nick ?blamenick . }
 				OPTIONAL { ?blame foaf:name ?blamename . }
 				OPTIONAL { ?blame rdfs:label ?blamename . }
@@ -612,6 +524,76 @@ sub _release_data__legacy
 
 __END__
 
+=head1 NAME
+
+RDF::DOAP::ChangeSets - create pretty ChangeLogs from RDF
+
+=head1 SYNOPSIS
+
+ use RDF::DOAP::ChangeSets;
+ use URI::file;
+ 
+ my $file     = 'path/to/changelog.rdf';
+ my $file_uri = URI::file->new_abs($file);
+ 
+ my $dcs = RDF::DOAP::ChangeSets->new(
+             $file_uri, undef, undef, 'RDFXML');
+ print $dcs->to_string;
+
+=head1 DESCRIPTION
+
+This module takes software changelogs written in the RDF DOAP
+Change Sets vocabulary and produces human-readable changelogs.
+
+=over
+
+=item C<< RDF::DOAP::ChangeSets->new($uri, $data, $type, $fmt) >>
+
+Creates and initialises an object.
+
+$uri is a URL for the input data. The URL is used to query the
+RDF data for the heading of the output changelog. It may be passed
+as either a string, or a L<URI> object.
+
+$data is the RDF data to use as input. It may be passed as a
+string, or as an L<RDF::Trine::Model> object. If undefined,
+this module will attempt to read data from the URL using
+L<LWP::Simple>.
+
+$type gives the constructor a hint as to the RDF vocabulary you
+are using. For DOAP Change Sets, use 'current'; for Aaron Cope's
+Changefile vocab, use 'legacy'; to autodetect, use 'auto'. By
+default, performs autodetection. This module may crash and burn
+if you try to mix both vocabs!!
+
+$fmt provides a hint as to what RDF format you're using. By
+default, Turtle is assumed. Valid values are whatever
+RDF::Trine::Parser->new accepts.
+
+=item C<< $changeset->is_legacy >>
+
+Boolean, indicating if a legacy vocab is being used.
+
+=item C<< $changeset->is_current >>
+
+Boolean, indicating if the current vocab is being used.
+
+=item C<< $changeset->model >>
+
+RDF::Trine::Model object representing the changelog data.
+
+=item C<< $changeset->uri >>
+
+String representing the changelog URI.
+
+=item C<< $changeset->to_string >>
+
+Creates a human-readable representation of the changelog.
+
+=item C<< $changeset->to_file($filename) >>
+
+Same as C<to_string>, but outputs to a file.
+
 =back
 
 =head1 BUGS
@@ -630,7 +612,7 @@ Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
 
 =head1 COPYRIGHT
 
-Copyright 2010-2011 Toby Inkster
+Copyright 2010-2012 Toby Inkster
 
 This library is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
