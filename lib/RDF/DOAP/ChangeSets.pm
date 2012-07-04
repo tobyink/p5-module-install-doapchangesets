@@ -30,7 +30,7 @@ use RDF::Trine;
 use RDF::Query;
 use Text::Wrap;
 
-our $VERSION = '0.202';
+our $VERSION = '0.203';
 
 =head1 DESCRIPTION
 
