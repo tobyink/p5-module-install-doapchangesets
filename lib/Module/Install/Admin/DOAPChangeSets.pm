@@ -18,27 +18,26 @@ sub _make_dcs
 
 	unless (defined $self->{DCS})
 	{
-		my @files_to_try = qw[meta/changes.ttl Changes.ttl];
-		while (!defined $in)
-		{
-			my $f = shift @files_to_try;
-			$in = $f if -e $f;
-		}
-		die "meta/changes.ttl not found.\n" unless defined $in;
-		
-		my $inuri = URI::file->new_abs($in);
-		
 		my $model = eval {
 			require Module::Install::Admin::RDF;
 			Module::Install::Admin::RDF::rdf_metadata($self);
-			};
+		};
 		if (defined $model)
 		{
+			my $inuri = URI::file->new_abs("meta/");
 			$self->{DCS} = RDF::DOAP::ChangeSets->new($inuri, $model);
 		}
 		else
 		{
+			my @files_to_try = qw[meta/changes.ttl Changes.ttl];
+			while (@files_to_try and not defined $in)
+ 			{
+				my $f = shift @files_to_try;
+				$in = $f if -e $f;
+			}
+			die "meta/changes.ttl not found" unless $in;
 			my $data = slurp($in);
+			my $inuri = URI::file->new_abs($in);
 			$self->{DCS} = RDF::DOAP::ChangeSets->new($inuri, undef, $type, $fmt);
 		}
 	}
