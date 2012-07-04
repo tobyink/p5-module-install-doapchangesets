@@ -183,3 +183,15 @@ my:v_0-202
 		dcs:item   [ a dcs:Addition ; rdfs:label "Support 'dcs:blame'."@en ] ;
 		dcs:item   [ rdfs:label "Improved sort order of change items within each version."@en ]
 	] .
+
+my:project :release my:v_0-203 .
+my:v_0-203
+	a               :Version ;
+	dc:issued       "2012-07-04"^^xsd:date ;
+	:revision       "0.203"^^xsd:string ;
+	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.203.tar.gz> ;
+	dcs:changeset [
+		dcs:versus my:v_0-202 ;
+		dcs:item   [ a dcs:Addition ; rdfs:label "Support 'dcs:thanks'."@en ; dcs:thanks [ foaf:nick "KJETILK" ] ] ;
+		dcs:item   [ rdfs:label "When Module::Install::RDF is in use, then don't complain about missing files."@en ]
+	] .
