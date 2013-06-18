@@ -9,6 +9,7 @@ use Perl::Version;
 use RDF::Trine;
 use RDF::Query;
 use Text::Wrap;
+use List::MoreUtils qw(uniq);
 
 our $VERSION = '0.203';
 
@@ -162,6 +163,7 @@ sub to_string
 					if (defined $change->{'type'} and ref($change->{'type'}) eq 'ARRAY')
 					{
 						$sigil = join ' ',
+							uniq
 							sort
 							map { m!doap.changeset.(.+)$!; $1; }
 							grep { m!doap.changeset.(.+)$! }
@@ -170,6 +172,17 @@ sub to_string
 					}
 					# Bullet point
 					my $ret = wrap(' - ', '   ', sprintf("%s%s", $sigil, $change->{'label'})) . "\n";
+					
+					for (sort keys %{ $change->{issue} || {}})
+					{
+						m{^http://purl\.org/NET/cpan-uri/rt/ticket/([0-9]+)$}
+							? ($ret .= sprintf("   Fixes RT#%s\n", $1)) :
+						m{^(?:tdb:.*)https://rt\.cpan\.org/Ticket/Display\.html\?id=([0-9]+)$}
+							? ($ret .= sprintf("   Fixes RT#%s\n", $1)) :
+						m{^(?:tdb:.*)https://github.com/.*/issues/([0-9]+)$}
+							? ($ret .= sprintf("   Fixes GH#%s\n", $1)) :
+						();
+					}
 					
 					my %blame = %{ $change->{blame} || {}};
 					foreach $b (values %blame)
@@ -397,6 +410,7 @@ sub _release_data__current
 	my $projects = $self->{'projects'};
 	
 	my $sparql = "
+	PREFIX dbug: <http://ontologi.es/doap-bugs#>
 	PREFIX dc: <http://purl.org/dc/terms/>
 	PREFIX dcs: <http://ontologi.es/doap-changeset#>
 	PREFIX doap: <http://usefulinc.com/ns/doap#>
@@ -420,6 +434,7 @@ sub _release_data__current
 				OPTIONAL { ?blame foaf:name ?blamename . }
 				OPTIONAL { ?blame rdfs:label ?blamename . }
 			}
+			OPTIONAL { ?item dbug:fixes ?issue . }
 		}
 	}
 	";
@@ -448,6 +463,13 @@ sub _release_data__current
 				and $row->{'itemtype'}->uri ne 'http://ontologi.es/doap-changeset#Change';
 			$projects->{$p}->{'v'}->{$v}->{'c'}->{$c}->{'blame'} = {};
 			
+			if (UNIVERSAL::isa($row->{'issue'}, 'RDF::Trine::Node::Resource'))
+			{
+				$projects->{$p}->{'v'}->{$v}->{'c'}->{$c}->{'issue'}->{ $row->{'issue'}->uri }++;
+				push @{ $projects->{$p}->{'v'}->{$v}->{'c'}->{$c}->{'type'} },
+					q[http://ontologi.es/doap-changeset#Bugfix];
+			}
+		
 			if (UNIVERSAL::isa($row->{'blame'}, 'RDF::Trine::Node'))
 			{
 				my $b = $row->{'blame'}->as_ntriples;
