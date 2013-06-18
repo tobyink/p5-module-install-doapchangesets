@@ -11,7 +11,7 @@ use RDF::Query;
 use Text::Wrap;
 use List::MoreUtils qw(uniq);
 
-our $VERSION = '0.203';
+our $VERSION = '0.204';
 
 sub new
 {

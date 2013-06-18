@@ -1,4 +1,5 @@
 @prefix :        <http://usefulinc.com/ns/doap#> .
+@prefix dbug:    <http://ontologi.es/doap-bugs#> .
 @prefix dcs:     <http://ontologi.es/doap-changeset#> .
 @prefix dc:      <http://purl.org/dc/terms/> .
 @prefix foaf:    <http://xmlns.com/foaf/0.1/> .
@@ -195,3 +196,19 @@ my:v_0-203
 		dcs:item   [ a dcs:Addition ; rdfs:label "Support 'dcs:thanks'."@en ; dcs:thanks [ foaf:nick "KJETILK" ] ] ;
 		dcs:item   [ rdfs:label "When Module::Install::RDF is in use, then don't complain about missing files."@en ]
 	] .
+
+my:project :release my:v_0-204 .
+my:v_0-204
+	a               :Version ;
+	dc:issued       "2013-06-18"^^xsd:date ;
+	:revision       "0.204"^^xsd:string ;
+	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.204.tar.gz> ;
+	dcs:changeset [
+		dcs:versus my:v_0-203 ;
+		dcs:item [
+			a dcs:Addition;
+			rdfs:label "Support 'dbug:fixes'."@en;
+			dbug:fixes <http://purl.org/NET/cpan-uri/rt/ticket/86225>;
+		];
+	].
+
