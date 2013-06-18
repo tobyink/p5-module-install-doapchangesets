@@ -208,7 +208,21 @@ my:v_0-204
 		dcs:item [
 			a dcs:Addition;
 			rdfs:label "Support 'dbug:fixes'."@en;
-			dbug:fixes <http://purl.org/NET/cpan-uri/rt/ticket/86225>;
+			dcs:fixes <http://purl.org/NET/cpan-uri/rt/ticket/86225>;
+		];
+	].
+
+my:project :release my:v_0-205 .
+my:v_0-205
+	a               :Version ;
+	dc:issued       "2013-06-18"^^xsd:date ;
+	:revision       "0.205"^^xsd:string ;
+	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.205.tar.gz> ;
+	dcs:changeset [
+		dcs:versus my:v_0-204 ;
+		dcs:item [
+			a dcs:Bugfix;
+			rdfs:label "Oops! That should be 'dcs:fixes'."@en;
 		];
 	].
 

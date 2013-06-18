@@ -11,7 +11,7 @@ use RDF::Query;
 use Text::Wrap;
 use List::MoreUtils qw(uniq);
 
-our $VERSION = '0.204';
+our $VERSION = '0.205';
 
 sub new
 {
@@ -434,7 +434,7 @@ sub _release_data__current
 				OPTIONAL { ?blame foaf:name ?blamename . }
 				OPTIONAL { ?blame rdfs:label ?blamename . }
 			}
-			OPTIONAL { ?item dbug:fixes ?issue . }
+			OPTIONAL { ?item dcs:fixes ?issue . }
 		}
 	}
 	";
