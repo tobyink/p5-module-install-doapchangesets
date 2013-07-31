@@ -10,7 +10,7 @@ use File::Slurp qw(slurp);
 use URI::file;
 use Module::Install::Base;
 
-our $VERSION = '0.205';
+our $VERSION = '0.206';
 
 sub _make_dcs
 {

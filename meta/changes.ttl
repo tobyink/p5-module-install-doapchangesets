@@ -226,3 +226,17 @@ my:v_0-205
 		];
 	].
 
+my:project :release my:v_0-206 .
+my:v_0-206
+	a               :Version ;
+	dc:issued       "2013-07-31"^^xsd:date ;
+	:revision       "0.206"^^xsd:string ;
+	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-DOAPChangeSets-0.206.tar.gz> ;
+	dcs:changeset [
+		dcs:versus my:v_0-205 ;
+		dcs:item [
+			a dcs:Update;
+			rdfs:label "Minor changes to the release header now that CPAN::Changes::Spec 0.02 has been published."@en;
+		];
+	].
+
